@@ -83,3 +83,18 @@ Peak Configuration: GGA-DenseNet-161
 State-of-the-Art Accuracy: 94.39% on the VERA Database
 
 Key Visual Proof: Grad-CAM activations demonstrate precise spatial localization matching internal vascular geometry.
+
+
+📜 Reference & Citation
+If you use this code, the GGA module architecture, or find our benchmarks helpful in your biometric research, please cite our work as presented in the workshop proceedings of the conference:
+@inproceedings{yourname2026global,
+  title={Global Gated Attention for Robust Gender Classification in Palm Vein Biometrics},
+  author={Your Name and Co-Authors},
+  booktitle={Proceedings of the Workshop on Empathic AI: Face, Gesture, and Accessibility Technologies, held in conjunction with the 20th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2026)},
+  year={2026},
+  month={May},
+  publisher={IEEE}
+}
+
+
+
