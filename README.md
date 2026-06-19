@@ -16,18 +16,20 @@ This repository contains the official PyTorch implementation for our framework *
 └── README.md                # Project documentation
 ```
 
-🛠️ Installation
+# 🛠️ Installation
 1. Clone the Repository
 git clone https://github.com/saranasook/GGA_plam_gender-classfication_palm-vein.git
+```text
 cd GGA_plam_gender-classfication_palm-vein
-
+```
 
 2. Install Dependencies
 Ensure you have Python 3.8+ installed. You can install all required packages via pip:
-
+```text
 pip install -r requirements.txt
+```
 
-📊 Data Preparation
+# 📊 Data Preparation
 Our framework is evaluated using the public VERA Palm Vein Database. To prepare your data pipeline for training, complete the following steps:
 
 Download the Dataset: Request and download the raw Near-Infrared (NIR) palm vein images from the official VERA dataset provider.
@@ -40,6 +42,7 @@ Generate CSV Metadata: Create train_data.csv and val_data.csv files. The dataset
 
 
 Example CSV Format:
+
 0,/absolute/path/to/VERA/images/001_L.png,M
 1,/absolute/path/to/VERA/images/002_F.png,F
 2,/absolute/path/to/VERA/images/003_L.png,M
@@ -48,31 +51,29 @@ Example CSV Format:
 Note: Update the file paths inside train.py (train_dataset and val_dataset initializers) to point directly to your generated CSV files.
 
 
-🚀 How to Use
+# 🚀 How to Use
 1. Model Training & Evaluation
 To start the model training loop using the GGA-DenseNet-161 paradigm over 200 epochs, verify your dataset paths inside gender_rain.py and run:
-
+```text
 python train.py
-
+```
 This script automatically evaluates validation metrics at every epoch, saves your optimal parameter configurations to best.pt, and outputs multi-case confusion and precision metrics for both demographic categories.
 
 
 2. Single-Image Inference
 To run a fast forward prediction pass on a single raw palm vein image file using a saved checkpoint weight array, use gender_inference.py:
-
+```text
 python gender_inference.py
-
-from inference import predict_single_image
-
+```
 
 Inside gender_inference.py usage example:
-
+```text
 result = predict_single_image(
     image_path="path/to/sample_palm.png",
     model_path="path/to/best.pt"
 )
-# Output: {'probability': 0.9432, 'label_id': 1, 'gender': 'Female (F)'}
-
+Output: {'probability': 0.9432, 'label_id': 1, 'gender': 'Female (F)'}
+```
 
 
 🔬 Core Methodology & Performance
